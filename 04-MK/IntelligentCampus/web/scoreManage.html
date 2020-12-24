@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>成绩查询</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="js/jquery.js"></script>
+    <style>
+        .layui-form-item .layui-input-inline {
+            width: 195px;
+        }
+        .layui-input-inlinemy{
+            padding-top: 12px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="box">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>成绩查询</legend>
+    </fieldset>
+    <div class="layui-form-item">
+        <label for="sno" class="layui-form-label">学号：</label>
+        <div class="layui-input-inline">
+            <input type="text" name="sno" id="sno" placeholder="请输入您的学号" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label for="passwd" class="layui-form-label">密码：</label>
+        <div class="layui-input-inline">
+            <input type="password" name="passwd" id="passwd" placeholder="请输入您的教务系统密码" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label for="remberpwd" class="layui-form-label">记住密码</label>
+        <div class="layui-input-inline layui-input-inlinemy">
+            <input type="checkbox" name="remberpwd" id="remberpwd">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        <div class="layui-input-inline">
+            <button type="button" id="btnSearch" class="layui-btn layui-btn-normal">查询</button>
+        </div>
+    </div>
+
+
+    <textarea id="res" cols="60" rows="20" disabled></textarea>
+</div>
+</body>
+
+<script>
+    $(function () {
+        //加载页面的时候读取user内容
+        var user=JSON.parse(window.localStorage.getItem("user"));
+        $("#sno").val(user.sno);
+        $("#passwd").val(user.passwd);
+
+        $("#btnSearch").click(function () {
+
+            if($("#remberpwd").prop("checked")){
+                var user={sno:$("#sno").val(),passwd:$("#passwd").val()};
+                window.localStorage.removeItem("user");
+                window.localStorage.setItem("user",JSON.stringify(user));
+            }
+            $.ajax({
+                // 提交数据的类型 POST GET
+                type: "get",
+                crossDomain : true, //跨域问题
+                // 提交的网址
+                url: "http://localhost:5000/xscj",
+                // 提交的数据格式
+                data: {
+                    sno: $("#sno").val(),
+                    passwd: $("#passwd").val()
+                },
+                success: function (data) {
+                    alert(data);
+                    // let user = data.user;
+                    // // 客户端显示数据
+                    // alert(JSON.stringify(user));
+                    // window.location.href="goodsManage.html";
+                    $("#res").val(data);
+                },
+                error: function (data) {
+                    alert(data);
+                }
+            });
+        });
+    })
+</script>
+
+</html>

@@ -1,0 +1,22 @@
+<view>
+  <searchinput></searchinput>
+</view>
+<view class="tuijian">
+<view class="kg"></view>
+<!-- <text>所有外卖：</text> -->
+</view>
+<view class="kongge"></view>
+<view class="content" >
+  <block wx:for="{{res1}}" wx:for-item="item1" >
+    <view class="content-item" catchtap="detail"data-id="{{item1.goodsid}}">
+      <view class="up">
+        <image src="{{shouji}}{{item1.goodsimg}}"></image>
+        <text>{{item1.goodsname}}</text>
+      </view>
+      <view class="down">
+        <text class="price">￥{{item1.goodsprice}}</text>
+        <text class="num">{{item1.goodsstatus}}人已付款</text>
+      </view>
+    </view>
+  </block>
+  </view>

@@ -1,0 +1,9 @@
+<!--pages/news/details.wxml-->
+<view class="detail">
+  <view class="detailcontent">
+    <text class="title">{{details.title}}</text>
+    <text class="uptime">{{details.updatetime}}</text>
+    <image class="img" src="{{details.img}}" mode="widthFix"></image>
+    <text class="content">{{details.content}}</text>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/healthCode/healthcode.wxml-->
+<view class="box">
+  <view class="background">
+    <text class="name">姓名:xxx</text>
+     <image src="/pages/img/cgbg.jpg"></image>
+  </view>
+  <view class="healthcode">
+    <image id="jkm" src="/pages/img/jkm.png"></image>
+  </view>
+  <view class="update">
+    <button catchtap="status">更新状态</button>
+  </view>
+  <view class="sug">
+    <text id="sug1">健 康 提 示\n</text>
+    <text id="sug2">绿色：勤洗手、常通风、戴口罩，出现发热咳嗽等症状请及时就医</text>
+  </view> 
+</view>

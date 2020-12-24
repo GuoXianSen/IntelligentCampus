@@ -1,0 +1,49 @@
+<!-- 搜索框 -->
+<view class="search">
+  <searchinput></searchinput>
+</view>
+<!-- 轮播图 -->
+<swiper class="swiper" autoplay="ture" interval="2000" style="800rpx" indicator-dots="true">
+  <block wx:for="{{imgSrc}}" wx:for-item="item">
+  <swiper-item >
+    <image src="{{item}}" class="imgtop" ></image>  
+  </swiper-item>
+</block>
+</swiper>
+<!-- <view class="kongge"></view> -->
+<!-- <view class="line"></view> -->
+<view class="fenlei">
+  <view class="nav" catchtap="waimai">
+    <image src="{{fenlei[0]}}"></image>
+    <text>外卖</text>
+  </view>
+  <view class="nav" catchtap="lingshi">
+    <image src="{{fenlei[1]}}"></image>
+    <text>零食</text>
+  </view>
+  <view class="nav" catchtap="yinliao">
+    <image src="{{fenlei[2]}}"></image>
+    <text>饮料</text>
+  </view>
+</view>
+<!--空行-->
+<view class="kongge"></view>
+<view class="tuijian">
+<view class="kg"></view>
+<text>今日推荐</text>
+</view>
+<view class="kongge"></view>
+<view class="content" >
+  <block wx:for="{{list}}" wx:for-item="item1" >
+    <view class="content-item" catchtap="detail"data-id="{{item1.goodsid}}">
+      <view class="up">
+        <image src="{{shouji}}{{item1.goodsimg}}"></image>
+        <text>{{item1.goodsname}}</text>
+      </view>
+      <view class="down">
+        <text class="price">￥{{item1.goodsprice}}</text>
+        <text class="num">{{item1.goodsstatus}}人已付款</text>
+      </view>
+    </view>
+  </block>
+  </view>

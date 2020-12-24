@@ -1,0 +1,58 @@
+/* pages/yinliao/yinliao.wxss */
+/* pages/waimai/waimai.wxss */
+.kongge{
+  width: 100%;
+  height: 30rpx;
+}
+
+.swiper{
+  height: 350rpx;
+}
+.swiper .imgtop{
+  height: 300rpx;
+}
+
+.line{
+  height: 10rpx;
+  background-color: rgb(204, 201, 201);
+}
+
+.content-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 370rpx;
+  height: 500rpx;
+  border: 1px solid rgb(240, 238, 238);
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.up image{
+  width: 340rpx;
+  height: 350rpx;
+}
+.up{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.up text{
+  text-align: center;
+}
+.down{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.up text{
+  width:300rpx ;
+  height: 80rpx;
+}
+.down .num{
+  line-height: 20rpx;
+  font-size: 25rpx;
+}

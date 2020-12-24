@@ -1,0 +1,83 @@
+
+.detail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 1000rpx;
+  justify-content: space-around;
+}
+
+.title-price{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 150rpx;
+}
+
+.swiper{
+  height: 750rpx;
+}
+
+.box{
+  display: flex;
+  justify-content: center;
+}
+
+swiper-item image{
+  width: 100%;
+  height: 650rpx;
+}
+
+.title-price .price{
+  font-weight: 500;
+  font-size: 50rpx;
+  color: black;
+}
+
+.btn_tool{
+  border: 1px solid gray;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.btn_tool .btn_cart{
+  width: 200rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(241, 113, 8);
+  color: white;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.btn_tool .btn_buy{
+  width: 200rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  color: white;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.btn_tool image{
+  width: 70rpx;
+  height: 70rpx; 
+}
+.kg{
+  width: 50rpx;
+}

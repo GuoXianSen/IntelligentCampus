@@ -1,0 +1,43 @@
+/* pages/search/index.wxss */
+.search{
+  display: flex;
+  justify-content: center;
+}
+.search-input{
+  display: flex;
+  padding: 10rpx;
+  flex-direction: row;
+  background-color: rgb(221, 221, 221);
+  border-radius: 18rpx;
+  width: 95%;
+  
+}
+.search-input input{
+  background-color: rgb(221, 221, 221);
+  border-radius: 10rpx;
+  width: 700rpx;
+}
+.search-input image{
+  width: 50rpx;
+  height: 50rpx;
+}
+text{
+  font-size: 30rpx;
+  font-weight: 500;
+}
+.hotsearch{
+  display: flex;
+  flex-wrap: wrap; 
+}
+.hotsearch navigator{
+  margin: 10rpx;
+  padding: 10rpx;
+  background-color: rgb(236, 238, 240);
+}
+.hotsearch{
+  display: flex;
+}
+.hotsearch image{
+  width: 35rpx;
+  height: 35rpx;
+}

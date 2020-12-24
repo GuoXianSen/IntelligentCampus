@@ -1,0 +1,66 @@
+<view class="box">
+  <view class="user">
+    <view class="userimg">
+      <image src="http://192.168.31.48:8080/web{{userinfo.userimg}}">
+      </image>
+    </view>
+    <view class="userinfo">
+      <text>{{userinfo.username}}</text>
+      <text>{{userinfo.phonenumber}}</text>
+    </view>
+  </view>
+
+  <!-- 分割线 -->
+  <view class="divLineX"></view>
+  <view class="divLineX"></view>
+  <view class="divLineX"></view>
+  
+  <!-- <view class="box">
+    <view class="bar">
+      <text catchtap="jump">姓名</text>
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <text>学号</text>
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <text>性别</text>
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <text>学院</text>
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <text>专业</text>
+    </view>
+  </view> -->
+
+  <!-- 分割线 -->
+  <view class="divLineX"></view>
+  <view class="divLineX"></view>
+  
+  <view class="box">
+    <view class="bar">
+      <text catchtap="tz_ziliao">我的资料</text>
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <text catchtap="tz_edit">编辑资料</text>
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <text>发帖历史</text>
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <text>收藏记录</text>
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <text catchtap="tz_updatepassword">修改密码</text>
+      <view class="divLineXs"></view>
+    </view>
+  </view>
+</view> 

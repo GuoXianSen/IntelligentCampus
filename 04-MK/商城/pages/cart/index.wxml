@@ -1,0 +1,56 @@
+<!--pages/cart/index.wxml-->
+<view class="cart_content">
+  <view class="cart_title">购物车</view>
+  <view class="cart_main">
+    <!--当cart数组不为0显示 -->
+    <block wx:if="{{cart.length!==0}}">
+      <view class="cart_item" wx:for="{{cart}}" wx:key="goods_id">
+        <!--复选框-->
+        <view class="cart_chk_wrap">
+          <checkbox-group bindtap="handleItemChange" data-id="{{item.goods_id}}">
+            <checkbox checked="{{item.checked}}"></checkbox>
+          </checkbox-group>
+        </view>
+        <!--商品图片-->
+        <navigator class="cart_img_wrap">
+          <image src="{{item.goods_small_logo}}" mode="widthFix" />
+        </navigator>
+        <!--商品信息-->
+        <view class="cart_info_wrap">
+          <view class="goods_name">
+            {{item.goods_name}}
+          </view>
+          <view class="goods_price_wrap">
+            <view class="goods_price">￥{{item.goods_price}}</view>
+            <view class="cart_num_tool">
+              <view class="num_edit" bindtap="handleItemNumEdit" data-id="{{item.goods_id}}" data-operation="{{-1}}">-</view>
+              <view class="goods_num">{{item.num}}</view>
+              <view class="num_edit" bindtap="handleItemNumEdit" data-id="{{item.goods_id}}" data-operation="{{1}}">+</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3559485588,3499568517&fm=15&gp=0.jpg" mode="widthFix" />
+    </block>
+  </view>
+</view>
+
+<view class="footer_tool">
+  <!--全选-->
+  <veiw class="all_chk_wrap">
+    <checkbox-group bindchange="handleItemAllchange">
+      <checkbox checked="{{allchecked}}">全选</checkbox>
+    </checkbox-group>
+  </veiw>
+  <!--总价格-->
+  <view class="total_price_wrap">
+    <view class="total_price">合计
+      <text class="total_price_text">￥{{totalPrice}}</text>
+    </view>
+    <view>包含运费</view>
+  </view>
+  <!--结算-->
+  <view class="order_pay_wrap" bindtap="handlePay">结算({{totalNum}})</view>
+</view>

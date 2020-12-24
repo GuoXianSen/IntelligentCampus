@@ -1,0 +1,55 @@
+/* pages/healthCode/healthcode.wxss */
+.background{
+  display: flex;
+  flex-direction: row;
+  height: 330rpx;
+  width:100%;
+  background-image: url(../img/jkbg.jpg);
+  /* background-color: #B0BADD; */
+  border: 1px solid black; 
+  /* overflow: hidden; */
+}
+
+.background text{
+  position: absolute;
+  top: 100rpx;
+  left: 50rpx;
+  color: white;
+}
+
+.background image{
+  width: 100%;
+  height: 100%;
+}
+
+.name{
+  margin-top: 10rpx;
+}
+
+.healthcode{
+  width:100%;
+  height: 600rpx;
+  /* border:1px solid black; */
+  display: flex;
+  /* justify-content: center; */
+  /* margin: 10rpx auto; */
+}
+
+.healthcode image{
+  width: 500rpx;
+  height: 500rpx;
+  margin: 100rpx auto;
+}
+
+.sug{
+  margin: 20rpx;
+}
+
+#sug1{
+  font-weight: bold;
+}
+
+#sug2{
+  font-size: medium;
+}
+

@@ -1,0 +1,27 @@
+
+<view class="detail" >
+
+<image src="{{shouji}}{{detail.goodsimg}}" class="imgtop"></image>
+
+
+<view class="title-price">
+<text class="title">{{detail.goodsname}}</text>
+<text class="price">￥{{detail.goodsprice}}</text>
+</view>
+</view>
+
+
+<view class="btn_tool">
+    <image src="{{shoucang}}" catchtap="shoucang"></image>
+    <view class="kg"></view>
+    <image src="{{shouji}}/zcart.png" catchtap="carttab"></image>
+    <view class="kg"></view>
+    
+
+   <view class="btn_cart" bindtap="btn_cart">
+      加入购物车
+   </view>
+   <view class="btn_buy" bindtap="btn_buy" data-goodsname="{{detail.goodsname}}">
+      立即购买
+   </view>
+</view>

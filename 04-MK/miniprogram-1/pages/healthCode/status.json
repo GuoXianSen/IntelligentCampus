@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "single-dropdown-select":"/pages/single-dropdown-select/index"
+  }
+}

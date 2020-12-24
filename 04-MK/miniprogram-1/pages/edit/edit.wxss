@@ -1,0 +1,162 @@
+/* pages/edit/edit.wxss */
+#edit{
+  text-align: center;
+  font-size: 30rpx;
+  color: gray;
+  margin-bottom: 100rpx;
+}
+.info{
+  font-size: 30rpx;
+  color: gray;
+}
+.box{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 10rpx;
+  margin-bottom: 40rpx;
+  
+}
+.input_txt{
+  font-size: 30rpx;
+  width:400rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  border: 1px solid;
+  border-color: lightblue;
+ /* margin: 0 auto; */
+ margin-bottom: 20rpx;
+ margin-right: 100rpx;
+}
+.fugai{
+  position: relative;
+}
+.confirm{
+  width: 60% !important;
+  height: 80rpx !important;
+  border-radius: 10rpx !important;
+  background-color:#efefef;
+  position: relative;
+  z-index: 0;
+}
+.age{
+  font-size: 30rpx;
+  width: 100rpx;
+  height: 30rpx;
+  border-radius: 10rpx;
+  border: 1px solid;
+  border-color: lightblue;
+}
+.email{
+  font-size: 30rpx;
+  width: 400rpx;
+  height: 30rpx;
+  border-radius: 10rpx;
+  border: 1px solid;
+  border-color: lightblue;
+}
+.inputbox {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 10rpx;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 32rpx;
+  color: #353535;
+}
+.inptxt{
+  font-size: 30rpx;
+  color: gray;
+  margin-left: 10rpx;
+    white-space: nowrap;
+  }
+ .inpbox {
+    width: 100%;
+    margin-left: 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ }
+.inp {
+      position: relative;
+      width: 100%;
+      height: 80rpx;
+    }
+
+.telinpbox {
+      width: 240rpx;
+  
+      overflow: hidden;
+      margin-top: 10rpx;}
+
+.telinp {
+        width: 55rpx;
+        height: 55rpx;
+        overflow: hidden;
+        margin-left: 25rpx;
+      }
+    
+
+.radiogroup {
+      display: flex;
+      flex-direction: row; }
+
+.radiobox {
+        display: flex;
+        flex-direction: row;
+        margin-left: 50rpx;
+      }
+      page{
+        background: #f3f7f7;
+       }
+       .select_box{
+        background: #fff;
+        width: 80%;
+        margin: 30rpx auto;
+        position: relative;
+        z-index: 1;
+       }
+       .select{
+        box-sizing: border-box;
+        width: 100%;
+        height: 70rpx;
+        border:1px solid #efefef;
+        border-radius: 8rpx;
+        display: flex;
+        align-items: center;
+        padding: 0 20rpx;
+       }
+       .select_text{
+        font-size: 30rpx;
+        flex: 1;
+       }
+       .select_img{
+        width: 40rpx;
+        height: 40rpx;
+        display: block;
+        transition:transform 0.3s;
+       }
+       .select_img_rotate{
+        transform:rotate(180deg); 
+       }
+       .option_box{
+        position: absolute;
+        top: 70rpx;
+        width: 100%;
+        border:1px solid #efefef;
+        box-sizing: border-box;
+        height: 0;
+        overflow-y: auto;
+        border-top: 0;
+        background: #fff;
+        transition: height 0.3s;
+       }
+       .option{
+        display: block;
+        line-height: 40rpx;
+        font-size: 30rpx;
+        border-bottom: 1px solid #efefef;
+        padding: 10rpx;
+       }   

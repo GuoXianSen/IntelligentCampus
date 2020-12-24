@@ -1,0 +1,27 @@
+<!--pages/news/more.wxml-->
+<view class="box">
+  <view class="head">
+    <text class="toptitle">常工热点</text>
+    <image src="/pages/img/hotspot.jpg" mode="widthFix"></image>
+  </view>
+
+  <view class="list">
+    <block wx:for="{{newsList}}" wx:for-item="newslist">
+      <view class="sbox" catchtap="detail" data-id="{{newslist.id}}">
+        <view class="top">
+          <text id="updatetime">{{newslist.updatetime}}</text>
+        </view>
+        <view class="bottom">
+          <view class="bottitle">
+            <text>{{newslist.title}}</text>
+          </view>
+          <view class="botimg">
+            <image src="{{newslist.img}}" mode="aspectFill"></image>
+          </view>
+        </view>
+      </view>
+      <view class="divLineXs"></view>
+      <view class="divLineXs"></view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,88 @@
+/* pages/xy1/1.wxss */
+.box1{
+  text-align: center;
+}
+page{ 
+  height: 100%; 
+ } 
+  
+ .container { 
+  height: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  padding: 0; 
+  box-sizing: border-box; 
+  
+ } 
+  
+ /*登录图片*/
+ .login-icon{ 
+  flex: none; 
+ } 
+  
+ .login-img{ 
+  width: 750rpx;
+ } 
+  
+ /*表单内容*/
+ .login-from { 
+  margin-top: 20px; 
+  flex: auto; 
+  height:100%; 
+ } 
+  
+ .inputView { 
+
+  line-height: 45px; 
+  border-radius:20px;
+   border:1px solid #999999;
+ } 
+  
+ /*输入框*/
+  .keyImage { 
+  margin-left: 22px; 
+  width: 18px; 
+  height: 16px
+ } 
+  
+ .loginLab { 
+  margin: 15px 15px 15px 10px; 
+  color: #545454; 
+  font-size: 14px
+ } 
+  
+ .inputText { 
+  flex: block; 
+  float: right; 
+  text-align: right; 
+  margin-right: 22px; 
+  margin-top: 11px;
+  color: black; 
+  font-size: 14px
+ } 
+ .line { 
+  margin-top: 8px; 
+ } 
+ /*按钮*/
+ .loginBtnView { 
+  width: 100%; 
+  height: auto; 
+  margin-top: 0px; 
+  margin-bottom: 0px; 
+  padding-bottom: 0px; 
+ } 
+  
+ .loginBtn { 
+  width: 90%; 
+  margin-top: 40px; 
+  border-radius:10rpx;
+ }
+ .confirm{
+  width: 90% !important;
+  height: 80rpx !important;
+  border-radius: 10rpx !important;
+  background-color:#efefef;
+  margin-top: 20rpx;
+  /* position: relative;
+  z-index: 0; */
+}

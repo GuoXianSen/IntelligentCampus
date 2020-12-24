@@ -1,0 +1,47 @@
+/* pages/cart1/cart1.wxss */
+.cartcontainer{
+  display: flex;
+  flex-direction: column;
+
+}
+.cartcontainer .cart-item{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 200rpx;
+  border: rgb(231, 191, 11) solid 1rpx ;
+  background-color: rgb(213, 231, 230);
+}
+.cart-item image{
+   width: 150rpx;
+   height: 150rpx;
+   border: 1rpx solid red;
+}
+.word{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 75%;
+}
+.word .text1{
+  font-size: large;
+  font-weight: 600;
+}.manage{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 35%;
+}
+.manage .buy{
+  font-size: 33rpx;
+  color: rgb(12, 175, 250);
+}
+.manage .delete{
+  font-size: 33rpx;
+  color: red;
+}
+.manage .line{
+  width: 1rpx;
+  height: 33rpx;
+  background-color: black;
+}

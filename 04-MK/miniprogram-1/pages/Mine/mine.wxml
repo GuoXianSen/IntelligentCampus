@@ -1,0 +1,78 @@
+<view class="box">
+  <view class="user">
+    <view class="userimg">
+      <image src="/pages/img/qq头像.jpg">
+      </image>
+    </view>
+    <view class="userinfo">
+      <text>罗刘方舟</text>
+      <text>186xxx</text>
+    </view>
+  </view>
+
+  <!-- 分割线 -->
+  <view class="divLineX"></view>
+  <view class="divLineX"></view>
+  <view class="divLineX"></view>
+  
+  <view class="box">
+    <view class="bar">
+      <image class="icon" src="/pages/img/姓名.svg"></image>
+      <text catchtap="jump">姓名</text>
+      
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <image class="icon" src="/pages/img/学号.svg"></image>
+      <text>学号</text>
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <image class="icon" src="/pages/img/性别.svg"></image>
+      <text>性别</text>
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <image class="icon" src="/pages/img/学院.svg"></image>
+      <text>学院</text>
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <image class="icon" src="/pages/img/专业.svg"></image>
+      <text>专业</text>
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <image class="icon" src="/pages/img/邮箱.svg"></image>
+      <text>邮箱</text>
+    </view>
+  </view>
+
+  <!-- 分割线 -->
+  <view class="divLineX"></view>
+  <view class="divLineX"></view>
+  
+  <view class="box">
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <image class="icon" src="/pages/img/编辑资料.svg"></image>
+      <text>编辑资料</text>
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <image class="icon" src="/pages/img/发帖历史.svg"></image>
+      <text>发帖历史</text>
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <image class="icon" src="/pages/img/收藏记录.svg"></image>
+      <text>收藏记录</text>
+    </view>
+    <view class="divLineXs"></view>
+    <view class="bar">
+      <image class="icon" src="/pages/img/修改密码.svg"></image>
+      <text>修改密码</text>
+      <view class="divLineXs"></view>
+    </view>
+  </view>
+</view> 

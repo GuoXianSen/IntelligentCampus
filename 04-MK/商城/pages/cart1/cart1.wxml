@@ -1,0 +1,21 @@
+
+<view class="cartcontainer">
+<block wx:for="{{cartinfo}}" for-item="item">
+ <view class="cart-item">
+
+  <view class="goodsimg">
+    <image src="{{shouji}}{{item.goodsimg}}"></image>
+  </view>
+  <view class="word">
+    <text class="text1">{{item.goodsname}}</text>
+    <text class="text2">￥{{item.goodsprice}}</text>
+  </view>
+  <view class="manage">
+   <view class="buy" catchtap="buy" data-goodsid="" data-goodsname="{{item.goodsname}}">立即购买</view>
+   <view class="line"></view>
+   <view class="delete" catchtap="delete" data-goodsid="{{item.goodsid}}">删除</view>
+  </view>
+
+  </view>
+</block>
+</view>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>健康码管理 | 智慧校园</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="./layui/layui.all.js"></script>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <style type="text/css">
+
+        .layui-table-cell{
+
+            text-align:center;
+
+            height: auto;
+
+            white-space: normal;
+
+        }
+        .layui-table img{
+            max-width:100px
+        }
+    </style>
+</head>
+<body style="height: 1200px">
+
+<table id="demo" lay-filter="test" width="1000px"></table>
+
+<!-- 编辑表格 -->
+<div class="layui-row" id="popUpdateMemberInfo" style="display:none;">
+    <div class="layui-col-md10">
+        <form class="layui-form layui-from-pane" lay-filter="formMemberFilter" action="" style="margin-top:20px" >
+            <div class="layui-form-item">
+                <label class="layui-form-label">商品id:</label>
+                <div class="layui-input-block">
+                    <input type="text" name="goodsid" id="goodsid" required  disabled lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">商品名称:</label>
+                <div class="layui-input-block">
+                    <input type="text" name="goodsname" id="goodsname" required  lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">商品数量：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="goodsnum" id="goodsnum"  required  lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">商品价格：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="goodsprice" id="goodsprice" required  lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">已售数量：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="goodsstatus" id="goodsstatus" required  lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">创建时间：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="createtime" id="createtime" required  lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">修改时间:</label>
+                <div class="layui-input-block">
+                    <input type="text" name="updatedtime" id="updatedtime" required  lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">商品编码：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="goodscode" id="goodscode" required  lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">商品图片:</label>
+                <div class="layui-input-block">
+                    <input type="text" name="goodsimg" id="goodsimg" required  lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item" style="margin-top:40px">
+                <div class="layui-input-block">
+                    <button class="layui-btn  layui-btn-submit " lay-submit="" lay-filter="upload">确认修改</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+
+        //第一个实例
+        table.render({
+            elem: '#demo'
+            ,height: 900
+            ,url: 'http://localhost:8080/web/HealthCodeServlet?method=getAllHealthCode' //数据接口
+            ,response:{
+                statusName: 'status' //规定数据状态的字段名称，默认：code
+                ,statusCode: 200 //规定成功的状态码，默认：0
+                ,msgName: 'msg' //规定状态信息的字段名称，默认：msg
+                ,countName: 'total' //规定数据总数的字段名称，默认：count
+                ,dataName: 'rows' //规定数据列表的字段名称，默认：data
+            }
+            ,page: true //开启分页
+            ,cols: [[ //表头
+                {field: 'userid', title: '用户id', width:120, sort: true, fixed: 'left'}
+                ,{field: 'username', title: '用户姓名', width:150}
+                ,{field: 'healthstatus', title: '健康状态', width:150}
+                ,{field: 'healthcodeimg', title: '健康码', width: 200, templet:'<div><img  src="http://localhost:8080/web/{{ d.healthcodeimg }}" ></div>'}
+                ,{field: 'healthinfo', title: '备注信息', width: 320}
+                ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo', title: '操作'}
+            ]]
+        });
+
+        //监听头工具栏事件
+        table.on('toolbar(test)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id)
+                ,data = checkStatus.data; //获取选中的数据
+            switch(obj.event){
+                case 'add':
+                    layer.msg('添加');
+                    break;
+                case 'update':
+                    if(data.length === 0){
+                        layer.msg('请选择一行');
+                    } else if(data.length > 1){
+                        layer.msg('只能同时编辑一个');
+                    } else {
+                        layer.alert('编辑 [id]：'+ checkStatus.data[0].id);
+                    }
+                    break;
+                case 'delete':
+                    if(data.length === 0){
+                        layer.msg('请选择一行');
+                    } else {
+                        layer.msg('删除');
+                    }
+                    break;
+            };
+        });
+
+        //监听行工具事件
+        table.on('tool(test)', function(obj){ //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+            var data = obj.data //获得当前行数据
+                ,layEvent = obj.event; //获得 lay-event 对应的值
+            if(layEvent === 'detail'){
+                layer.msg('查看操作');
+            } else if(layEvent === 'del'){
+                layer.confirm('您确定要删除此商品吗？', function(index){
+                    obj.del(); //删除对应行（tr）的DOM结构
+                    layer.close(index);
+                    //向服务端发送删除指令
+                    //向服务端发送删除指令
+                    $.ajax({
+                        // 提交数据的类型 POST GET
+                        type: "POST",
+                        // 提交的网址
+                        url: "http://localhost:8080/web/GoodsServlet?method=deleteGoods",
+                        // 提交的数据格式
+                        data: {
+                            goodsid: data.goodsid
+                        }
+                    });
+                });
+            } else if(layEvent === 'edit'){
+                //弹出修改框
+                layer.open({
+                    type:1, //layer提供了5种层类型。可传入的值有：0:（信息框，默认）,1:（页面层）,2:（iframe层）,3:（加载层）,4:（tips层）
+                    title:'编辑商品信息',
+                    area:['400px','670px'],
+                    content:$("#popUpdateMemberInfo")  //引入弹出层页面
+                })
+                uploadFormValue(obj,data);
+            }
+        });
+        //监听弹出框表单提交，massage是修改界面的表单数据'submit(demo11),是修改按钮的绑定
+        function uploadFormValue (obj,data) {
+            var form = layui.form;
+            form.val("formMemberFilter",{
+                "goodsid":data.goodsid,
+                "goodsname":data.goodsname,
+                "goodsnum":data.goodsnum,
+                "goodsprice":data.goodsprice,
+                "goodsstatus":data.goodsstatus,
+                "createtime":data.createtime,
+                "updatedtime":data.updatedtime,
+                "goodscode":data.goodscode,
+                "goodsimg":data.goodsimg
+            });
+            form.on('submit(upload)',function (message) {
+                var goodsid = $("#goodsid").val();
+                var goodsname = $("#goodsname").val();
+                var goodsnum = $("#goodsnum").val();
+                var goodsprice = $("#goodsprice").val();
+                var goodsstatus = $("#goodsstatus").val();
+                var createtime = $("#createtime").val();
+                var updatedtime = $("#updatedtime").val();
+                var goodscode = $("#goodscode").val();
+                var goodsimg = $("#goodsimg").val();
+                $.ajax({
+                    type:'get',
+                    // contentType: "application/json; charset=utf-8",//请求需要发送的处理数据  编码格式
+                    url:'http://localhost:8080/web/GoodsServlet?method=updateGoods',
+                    async:false,
+                    // cache : false,
+                    // dataType:"json",
+                    // crossDomain : true, //跨域问题
+                    // contentType: "application/json; charset=utf-8",//请求需要发送的处理数据  编码格式
+                    data:{
+                        "goodsid":goodsid,
+                        "goodsname":goodsname,
+                        "goodsnum":goodsnum,
+                        "goodsprice":goodsprice,
+                        "goodsstatus":goodsstatus,
+                        "createtime":createtime,
+                        "updatedtime":updatedtime,
+                        "goodscode":goodscode,
+                        "goodsimg":goodsimg
+                    },
+                    success:function(data){
+                        console.log(data);
+                        console.log(data.record);
+                        var aaa = eval(data);
+                        console.log(aaa);
+                        console.log(aaa.record);
+                        var result = eval("("+data+")");
+                        console.log(result);
+                        console.log(result.record);
+
+                        if (result.record == "1"){
+                            layer.closeAll('loading'),
+                                layer.load(3);
+                            layer.msg("修改数据成功",{icon:6});
+                            setTimeout(function () {
+                                alert("恭喜修改成功,3秒后跳转")
+                            },3000);
+                            layer.closeAll();
+                        }
+                        if(result.record == 0){
+                            layer.msg("修改数据失败",{icon:5});
+                        }
+
+                    },
+                    error:function () {
+                        alert("出问题了");
+                    }
+                });
+            })
+        }
+    });
+
+    //由于layui的table组件中 浮动并不是单个单元格真浮动，而是实际上是新加了一个浮动对象覆盖在原先的单元格上，所以如果不写如下代码，会造成被覆盖的那一层单元格没有被完全覆盖的bug
+    $(".layui-table-box .layui-table-header")
+        .children("table")
+        .children("thead")
+        .children("tr")
+        .each(function () {
+            $(this).children("th:last").children("div").width("300px");
+        });
+    $(".layui-table-box .layui-table-main")
+        .children("table")
+        .children("tbody")
+        .children("tr")
+        .each(function () {
+            $(this).children("td:last").children("div").width("300px");
+        });
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+
+</body>
+</html>

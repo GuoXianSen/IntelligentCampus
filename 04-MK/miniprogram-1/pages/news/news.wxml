@@ -1,0 +1,54 @@
+<!--pages/news/news.wxml-->
+<view class="box">
+  <!-- 分割线 -->
+  <view class="divLineXs"></view>
+  <view class="divLineXs"></view>
+  <view class="divLineXs"></view>
+
+  <!-- 热点新闻 -->
+  <view class="lunbo">
+    <text id="hotspot">热点新闻</text>
+    <view class="more">
+      <text catchtap="more">查看更多</text>
+      <image id="rightarrow" src="/pages/img/左.png" catchtap="more"></image>
+    </view>
+    <swiper interval="5000" autoplay="true" indicator-dots="true" indicator-active-color="#4EBBFF">
+      <!-- <block wx:for="{{imgNews}}" wx:for-item="item"> -->
+      <block wx:for="{{newsList}}" wx:for-item="item1">
+        <swiper-item catchtap="detail" data-id="{{item1.id}}">
+          <!-- <image id="swipe" mode="widthFix" src="/pages/img/{{item}}"></image> -->
+          <image id="swipe" mode="widthFix" src="{{item1.img}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 分割线 -->
+  <view class="divLineXs"></view>
+  <view class="divLineXs"></view>
+
+  <!-- 新闻列表 -->
+  <view class="list">
+    <block wx:for="{{newsList}}" wx:for-item="newslist">
+      <view class="sbox" catchtap="detail" data-id="{{newslist.id}}">
+        <view class="top">
+          <text id="updatetime">{{newslist.updatetime}}</text>
+          <text class="title">{{newslist.title}}</text>
+        </view>
+        <view class="bottom">
+          <view class="botcont">
+            <text>{{newslist.content}}</text>
+          </view>
+          <view class="botimg">
+            <image src="{{newslist.img}}" mode="aspectFill"></image>
+            <!-- <image src="{{newslist.img}}" bindload="imageLoad" data-index="{{index}}"
+              style="width:{{ images[index].width }}rpx; height:{{ images[index].height}}rpx;"></image> -->
+          </view>
+        </view>
+      </view>
+      <view class="divLineXs"></view>
+      <view class="divLineXs"></view>
+    </block>
+  </view>
+
+</view>

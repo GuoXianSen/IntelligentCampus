@@ -1,0 +1,28 @@
+/* pages/news/details.wxss */
+.detailcontent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 20rpx;
+  justify-content: space-between;
+  /* align-items: center; */
+  
+}
+
+.title {
+  font-weight: bold;
+}
+
+.uptime {
+  font-size: x-small;
+  color: #929292;
+}
+
+.img {
+  width: 100%;
+  align-items: center;
+}
+
+.content{
+  font-size:30rpx;
+}

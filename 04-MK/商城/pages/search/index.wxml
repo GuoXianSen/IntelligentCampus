@@ -1,0 +1,21 @@
+<view class="search">
+<view class="search-input">
+  <image src="/images/search.png"></image>
+<input type="text" placeholder="请输入商品名称" />
+</view>
+</view>
+<view class="hotsearch">
+<image src="{{shouji}}/zhot.png"></image>
+<text>热门搜索</text>
+</view>
+<view class="hotsearch">
+<navigator url="/pages/detail/detail?id=1">汉堡</navigator>
+<navigator url="/pages/detail/detail?id=2">小当家</navigator>
+<navigator url="/pages/detail/detail?id=3">脆司令</navigator>
+<navigator url="/pages/detail/detail?id=4">奥利奥</navigator>
+<navigator url="/pages/detail/detail?id=5">口水鱼</navigator>
+<navigator url="/pages/detail/detail?id=6">酒鬼花生</navigator>
+<navigator url="/pages/detail/detail?id=7">南京板鸭</navigator>
+<navigator url="/pages/detail/detail?id=8">鱼豆腐</navigator>
+<navigator url="/pages/detail/detail?id=9">老坛酸菜牛肉面</navigator>
+</view>

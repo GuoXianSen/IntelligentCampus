@@ -1,0 +1,10 @@
+table, td, th
+{
+    border:1px solid deepskyblue;
+}
+
+th
+{
+    background-color:deepskyblue;
+    color:white;
+}

@@ -1,0 +1,56 @@
+<view wx:if="{{isHide}}">
+  <view wx:if="{{canIUse}}">
+    <view class='header'>
+      <image src='/images/weixin_1.png'></image>
+    </view>
+    <view class='content'>
+      <view>申请获取以下权限</view>
+      <text>获得你的公开信息(昵称，头像等)</text>
+    </view>
+    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+      授权登录
+    </button>
+  </view>
+  <view wx:else>请升级微信版本</view>
+</view>
+
+<view wx:else>
+  <view class="userinfo">
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+
+  <view class="person-list">
+
+    <view class="list-item">
+      <image class="item-image" src="/images/youhuiquan.png"></image>
+      <text class="item-text">优惠券</text>
+    </view>
+
+    <view class="person-line"></view>
+    <view class="list-item">
+      <image class="item-image" src="/images/wodeshoucang.png"></image>
+      <text class="item-text">我的收藏</text>
+    </view>
+
+    <view class="person-line"></view>
+    <view class="list-item">
+      <image class="item-image" src="/images/shouhuodizhi.png"></image>
+      <text class="item-text">收货地址</text>
+    </view>
+
+    <view class="person-line"></view>
+    <view class="list-item">
+      <image class="item-image" src="/images/wodepingjia.png"></image>
+      <text class="item-text">我的评价</text>
+    </view>
+
+    <view class="person-line"></view>
+    <view class="list-item">
+      <image class="item-image" src="/images/zaixiankefu.png"></image>
+      <text class="item-text">在线客服:15895709730</text>
+    </view>
+  </view>
+  <view class="separate"></view>
+
+</view>

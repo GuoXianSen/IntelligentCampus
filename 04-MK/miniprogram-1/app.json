@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/healthCode/status", 
+    "pages/healthCode/healthcode",  
+    "pages/Mine/mine",
+    "pages/news/news",
+    "pages/news/more",
+    "pages/login/1",
+    "pages/My/My",
+    "pages/edit/edit",
+    "pages/updatepassword/updatepassword",
+    "pages/My/ziliao/ziliao",
+    "pages/news/details",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/register/register",
+    "pages/postHistory/posthistory",
+    "pages/single-dropdown-select/index"
+  ],
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/news/news",
+        "text": "校园资讯",
+        "iconPath": "/pages/img/社区.png",
+        "selectedIconPath": "/pages/img/社区.png"
+      },
+      {
+        "pagePath": "pages/healthCode/healthcode",
+        "text": "健康码",
+        "iconPath": "/pages/img/二维码.png",
+        "selectedIconPath": "/pages/img/二维码.png"
+      },
+      {
+        "pagePath": "pages/Mine/mine",
+        "text": "我的",
+        "iconPath": "/pages/img/个人办公.png",
+        "selectedIconPath": "/pages/img/个人办公.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

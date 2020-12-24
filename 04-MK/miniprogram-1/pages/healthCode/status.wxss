@@ -1,0 +1,23 @@
+/* pages/healthCode/status.wxss */
+.box{
+  background-color: #F8F8F8;
+}
+
+.sug text{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ padding-top: 15rpx;
+ padding-bottom: 15rpx;
+}
+
+.inputbar{
+  padding-top: 15rpx;
+  padding-bottom: 15rpx ;
+  background-color: white;
+}
+
+#czucode{
+  width: 100%;
+  height: 100%;
+}

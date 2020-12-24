@@ -1,0 +1,30 @@
+<view class="ziliao">
+<view class="box">
+<view class="info">账号：</view>
+<text class="info">{{userinfo.username}}</text>
+</view>
+<view class="box">
+<view class="info">手机号：</view>
+<text class="info">{{userinfo.phonenumber}}</text>
+</view>
+<view class="box">
+<view class="info">年龄：</view>
+<text class="info">{{userinfo.age}}</text>
+</view>
+<view class="box">
+<view class="info">邮箱：</view>
+<text class="info">{{userinfo.email}}</text>
+</view>
+<view class="box">
+        <view class="info">性别:</view>
+        <text class="info">{{userinfo.sex}}</text>
+      </view>
+<view class="box">
+<view class="academy" class="info">所在学院：</view>
+<text class="info">{{userinfo.college}}</text>
+</view>
+<view class="box">
+<view class="academy" class="info">专业：</view>
+<text class="info">{{userinfo.major}}</text>
+</view>
+</view>

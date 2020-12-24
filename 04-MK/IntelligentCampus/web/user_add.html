@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>智慧校园 | 添加用户</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/ajaxfileupload.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var sex="女";
+            var hobby=[];
+            var xy="外国语学院";
+            $("#select1").change(function (){
+                xy =  $(this).find("option:selected").text();
+            });
+            $("input:radio").each(function (){
+                $(this).click(function (){
+                    if($(this).prop("checked")){
+                        sex=$(this).val();
+                    }
+                });
+            });
+            $("input:checkbox").each(function (){
+                $(this).click(function (){
+                    if($(this).prop("checked")){
+                        hobby.push($(this).val() );
+                    }else {
+                        var p=$.inArray($(this).val(),hobby);
+                        hobby.splice(p,1);
+                    }
+                });
+            });
+            //取消
+            $("#btncan").click(function (){
+                $("#name").val("");
+                $("#password").val("");
+                $("#repassword").val("");
+                $("#phonenumber").val("");
+                $("#email").val("");
+                $("input:radio").each(function (){
+                    $(this).prop("checked",false);
+                });
+                $("input:checkbox").each(function (){
+                    $(this).prop("checked",false);
+                });
+
+            });
+            //注册
+            $('#btnAdd').click(function () {
+
+                // servlet URL
+                let url = "http://localhost:8080/web/UserServlet?method=userRegister";
+                $.ajax({
+                    type: 'post',
+                    url: url,
+                    async: false,
+                    // contentType: "application/x-www-form-urlencoded", //递交数据的编码方式
+                    // data: JSON.stringify(user),
+                    dataType: "json",
+                    data:{
+                        "username": $("#username").val(),
+                        "password": $("#password").val(),
+                        "email": $("#email").val(),
+                        "userimg": $("#userimg").val(),
+                        "phonenumber": $("#phonenumber").val(),
+                        "sex":sex,
+                        "college":xy,
+                        "major":$("#major").val(),
+                        "age":$("#age").val(),
+                    },
+                    success: function (data) {
+                        alert(data);
+                        // let user = data.user;
+                        // // 客户端显示数据
+                        // alert(JSON.stringify(user));
+                        window.location.href="userManage.html";
+                    },
+                    error: function (data) {
+                        alert(data.message);
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // 图片上传
+            SetUpload();
+
+        });
+        function SetUpload() {
+            $("#pictureFile").change(function () {
+                //图片格式验证
+                // 头像支持jpg/gif/jpeg/bmp/png格式，最大不超过1M
+                var imgType = /\.jpg$|\.gif$|\.jpeg$|\.bmp$|\.png$/i;
+                if (!imgType.test($("#pictureFile").val())) {
+                    alert("你不能上传该类型文件,文件类型只能是*.jpg,*.gif,*.jpeg,*.bmp,*.png。", BootstrapDialog.TYPE_WARNING);
+                    $("#" + fileId).val("");
+                    return;
+                }
+                //图片大小验证
+                try {
+                    if (window.File && window.FileReader && window.FileList && window.Blob) {
+                        //get the file size and file type from file input field
+                        var fsize = $("#" + fileId)[0].files[0].size;
+                        if (fsize > 1048576) {
+                            alert("上传出错！请确保图片最大不超过1M。");
+                            return;
+                        } else {
+                            // alert(fsize +" bites\nYou are good to go!");
+                        }
+                    } else {
+                        // alert("Please upgrade your browser, because your current browser lacks some new features we need!");
+                    }
+                } catch (exception) {
+                }
+                var basePath = GetbasePath();
+                $.ajaxFileUpload({
+                    url: basePath + "UploadServletFile", // 用于文件上传的服务器端请求地址
+                    secureuri: false, // 是否需要安全协议，一般设置为false
+                    fileElementId: "pictureFile", // 文件上传域的ID
+                    //dataType: 'text/html', // 返回值类型 一般设置为json
+                    dataType: 'json', // 返回值类型 一般设置为json
+                    // beforeSend : xmlBeforeSend,
+                    success: function (data, status) // 服务器成功响应处理函数
+                    {
+                        if (data.result == "success") {
+                            $("#imgId").attr("src", basePath + data.imgUrl);
+                            $("#userimg").val(data.imgUrl);
+
+                        } else {
+                            alert("上传出错！");
+                        }
+                        SetUpload();
+                    },
+                    error: function (data, status, e)// 服务器响应失败处理函数
+                    {
+                        alert("上传出错！");
+                        SetUpload();
+                    }
+                });
+            });
+        }
+
+        /**
+         * Created by Administrator on 2015/10/31.
+         *
+         * 实现类似jsp中<%=basePath%>的功能，获取项目根目录有助于url的填写
+         *
+         * 使用方法，用类似引用jQuery的方法引入本插件
+         *
+         * 定义一个全局的变量，然后的ready方法内部掉用本方法，获得basePath
+         */
+
+
+        function GetbasePath() {
+            //获取当前网址，如： http://localhost:8080/ems/Pages/Basic/Person.jsp
+            var curWwwPath = window.document.location.href;
+            //获取主机地址之后的目录，如： /ems/Pages/Basic/Person.jsp
+            var pathName = window.document.location.pathname;
+            var pos = curWwwPath.indexOf(pathName);
+            //获取主机地址，如： http://localhost:8080
+            var localhostPath = curWwwPath.substring(0, pos);
+            //获取带"/"的项目名，如：/ems
+            var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+            //获取项目的basePath   http://localhost:8080/ems/
+            var basePath = localhostPath + projectName + "/";
+            return basePath;
+        };
+    </script>
+</head>
+<body>
+<form>
+    <div style="width:500px; height: 660px; margin: 0 auto; background-color: aliceblue;text-align: center; background-color: skyblue">
+        <hr/>
+        <h2>用户添加</h2>
+        <hr>
+        <label>姓名</label>
+        <input type="text" name="username" id="username" value="gyz"/>
+        <hr/>
+        <label>密码</label>
+        <input type="password" name="password"  id="password"  value="gyz"/>
+        <hr/>
+        <label>确认密码</label>
+        <input type="password" name="password1"  id="repassword"  value="gyz"/>
+        <hr/>
+        <label>邮箱</label>
+        <input type="text" name="email"  id="email"  value="guoyinzhi@foxmail.com"/>
+        <hr/>
+        <label>电话</label>
+        <input type="text" name="phonenumber" id="phonenumber" lay-verify="phone"  value="15061131871"/>
+        <hr/>
+        <label>性别</label>
+        <input type="radio" id="r0" name="ra" value="男">男
+        <input type="radio" id="r1" name="ra" value="女" checked="true">女
+        <br>
+        <hr/>
+        <label>年龄</label>
+        <input type="text" name="age" id="age"  value="22"/>
+        <hr/>
+<!--        爱好-->
+<!--        <input type="checkbox" id="cb1" value="读书">读书-->
+<!--        <input type="checkbox" id="cb2" value="听音乐">听音乐-->
+<!--        <input type="checkbox" id="cb3" value="打篮球">打篮球-->
+<!--        <hr/>-->
+        所在学院
+        <select id="select1">
+            <option value="1">外国语学院</option>
+            <option value="0">计算机信息工程学院</option>
+            <option value="2">人文学院</option>
+            <option value="3">电气学院</option>
+            <option value="4">土木工程学院</option>
+            <option value="5">光电工程学院</option>
+            <option value="6">理学院</option>
+            <option value="7">化工学院</option>
+        </select>
+        <hr/>
+        <input type="file" name="pictureFile" id="pictureFile"/>
+        <hr/>
+        <img id="imgId" style="width:100px;height: 100px;max-width: 100px;" src=""/>
+        <input type="text" id="userimg" name="userimg"/>
+        <hr/>
+        <label>专业</label>
+        <input type="text" name="major"  id="major"  value="软件工程"/>
+        <hr/>
+        <input id="btnAdd" type="button" value="添加"/>
+        <input id="btncan" type="button" value="取消">
+    </div>
+</form>
+
+</body>
+</html>

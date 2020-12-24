@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/cart1/cart1",   
+    "pages/detail/detail",
+    "pages/logs/logs",
+    "pages/cart/index",
+    "pages/search/index",
+    "pages/user/index",
+    "pages/pay/index",
+    "components/Searchinput/searchinput",
+    "pages/lingshi/lingshi",
+    "pages/waimai/waimai",
+    "pages/yinliao/yinliao"
+   
+   
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#00BFFF",
+    "navigationBarTitleText": "校园商城",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#ff2d4a",
+    "backgroundColor": "#fafafa",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home-1.png"
+      },
+      {
+        "pagePath": "pages/cart1/cart1",
+        "text": "购物车",
+        "iconPath": "/images/cart.png",
+        "selectedIconPath": "/images/cart-1.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "/images/my.png",
+        "selectedIconPath": "/images/my-1.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

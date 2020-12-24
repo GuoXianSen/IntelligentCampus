@@ -1,0 +1,67 @@
+<!--pages/edit/edit.wxml-->
+<view id="edit">编辑资料</view>
+<!-- <view class="box">
+<view class="info">账号：</view>
+<input class="input_txt" type="text" name="account" value="{{account}}"
+ data-modal="account" bindinput="handleInputChange_account" placeholder="请输入账号"/>
+</view> -->
+<view class="box">
+<view class="info">手机号：</view>
+<input class="input_txt" type="text" name="phone" value="{{userinfo.phonenumber}}"
+ data-modal="phone" bindinput="handleInputChange_phone"/>
+</view>
+<view class="box">
+<view class="info">头像：</view>
+<input class="input_txt" type="text" name="userimg" value="{{userinfo.userimg}}"
+ data-modal="userimg" bindinput="handleInputChange_userimg"/>
+</view>
+<!-- <view class="box">
+<view class="info">密码：</view>
+<input class="input_txt" type="password" name="password" value="{{password}}"
+ data-modal="password" bindinput="handleInputChange_password" placeholder="请输入密码"/>
+</view> -->
+<!-- <view class="box">
+<view class="info">确认密码：</view>
+<input class="input_txt" type="password" name="confpassword" value="{{confpassword}}"
+ data-modal="confpassword" bindinput="handleInputChange_confpassword" placeholder="请再次输入密码"/>
+</view> -->
+<view class="box">
+<view class="info">年龄：</view>
+<input class="age" type="text" name="age" value="{{userinfo.age}}"
+ data-modal="age" bindinput="handleInputChange_age"/>
+</view>
+<view class="box">
+<view class="info">邮箱：</view>
+<input class="email" type="text" name="email" value="{{userinfo.email}}"
+ data-modal="email" bindinput="handleInputChange_email"/>
+</view>
+<view class="inputbox">
+        <view class="inptxt">性别:</view>
+        <view class="inpbox">
+          <radio-group bindchange="radioChange" class="inp radiogroup">
+            <view class="radiobox" wx:for="{{sex}}" wx:key="value">
+              <radio value="{{item.id}}" color="#ff0000" checked="{{item.checked}}" data-index='{{index}}' catchtap='optionTap2'/>
+              <view class="radiotxt">{{item.value}}</view>
+            </view>
+          </radio-group>          
+        </view>
+      </view>
+      <view class="fugai">
+<view class="box">
+<view class="academy" class="info">所在学院：</view>
+<view class='select_box'>
+ <view class='select' catchtap='selectTap'>
+  <text class='select_text'>{{selectData[index]}}</text>
+  <!-- <image class='select_img {{show&&"select_img_rotate"}}' src='/image/gobottom.png'></image>    -->
+ </view>
+ <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+  <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+ </view>
+</view>
+</view>
+<view class="box">
+<view class="info">专业：</view>
+<input class="email" type="text" name="major" value="{{userinfo.major}}"
+ data-modal="major" bindinput="handleInputChange_major"/>
+</view>
+<button class="confirm" catchtap="register">完成</button></view>

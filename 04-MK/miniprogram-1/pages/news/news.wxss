@@ -1,0 +1,129 @@
+/* pages/news/news.wxss */
+
+#swipe {
+  width: 100%;
+}
+
+.lunbo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 350rpx;
+  padding: 20rpx;
+  /* border:1px solid black; */
+}
+
+#hotspot{
+  font-weight: bold;
+}
+
+.more text{ 
+  position: absolute;
+  right: 70rpx;
+}
+
+#rightarrow{
+  width:40rpx;
+  height:40rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 38rpx;
+  /* margin-top: 20rpx; */
+  /* border: 1px solid black; */
+}
+
+.lunbo swiper {
+  margin: 30rpx auto;
+  width: 90%;
+}
+
+.lunbo image {
+  border-radius: 15rpx;
+}
+
+.divLineXs {
+  background-color: #F5F5F5;
+  width: 100%;
+  height: 5rpx;
+}
+
+.wx-swiper-dots .wx-swiper-dot {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 40rpx;
+}
+
+.wx-swiper-dots.wx-swiper-dots-horizontal {
+  bottom: 105rpx;
+  width: 90%;
+  text-align: right;
+}
+
+.sbox {
+  padding: 20rpx;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+}
+
+#updatetime {
+  font-size: x-small;
+  color: #929292;
+}
+
+.top text {
+  /* 文字单行溢出处理 */
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-weight: bolder;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.botcont {
+  width: 45%;
+  margin: 12rpx;
+}
+
+.botimg image{
+  /* display: block; */
+  /* width: 10%; */
+  /* height: 30%; */
+  /* overflow: hidden;
+  position: relative;
+  object-fit:cover;*/
+  border-radius: 15rpx; 
+  /* padding: 15rpx; */
+  height:180rpx;
+  width: 330rpx;
+  /* overflow:hidden; */
+  /* margin-bottom: 5rpx; */
+} 
+
+.bottom text {
+  font-size: small;
+  color: #929292;
+  font-weight: bold;
+  /* 文字多行溢出处理 */
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+

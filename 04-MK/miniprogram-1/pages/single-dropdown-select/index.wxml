@@ -1,0 +1,9 @@
+<view class='ms-content-box'>
+    <view class='ms-content' bindtap='selectToggle'>
+        <view class='ms-text'>{{selectText}}</view>
+         <view class="{{selectShow ? 'icon-up' : 'icon-down'}}"></view>
+    </view>
+    <view class='ms-options' wx:if="{{selectShow}}">
+        <view wx:for="{{propArray}}" data-index="{{index}}" wx:key='index' class='ms-option' bindtap='setText'>{{item.text || item.value || item}}</view>
+    </view>
+</view>

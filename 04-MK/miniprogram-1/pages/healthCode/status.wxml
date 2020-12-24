@@ -1,0 +1,27 @@
+<!--pages/healthCode/status.wxml-->
+<view class="box">
+  <view class="weui-cell">
+    <!-- <view class="weui-cell__hd">类型：</view>
+    <view class="weui-cell__bd">
+      <single-dropdown-select prop-array='{{selectArray}}' bind:select='select' />
+    </view> -->
+    <image id="czucode" src="/pages/img/cgbg.jpg" mode="widthFix"></image>
+    <view class="information">
+      <view class="sug">
+        <text>*填报人姓名：</text>
+        <input type="text" class="inputbar" disabled="true" placeholder="罗刘方舟" />
+      </view>
+      <view class="sug">
+        <text>*学号：</text>
+        <input type="text" class="inputbar" disabled="true" placeholder="17030316" />
+      </view>
+      <view class="sug">
+        <text>*手机号码：</text>
+        <input type="text" class="inputbar" placeholder="请输入您的手机号码" />
+      </view>
+    </view>
+    <view>
+      <button catchtap="update">确定</button>
+    </view>
+  </view>
+</view>
