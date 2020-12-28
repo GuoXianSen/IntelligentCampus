@@ -71,15 +71,11 @@
 
 ### 后端登录界面
 
-![image-20201223231520885](https://gitee.com/clay_guo/pic-bed/raw/master/img/image-20201223231520885.png)
-
-
+![QQ截图20201228232508](https://gitee.com/clay_guo/pic-bed/raw/master/img/QQ%E6%88%AA%E5%9B%BE20201228232508.png)
 
 ### 后端注册界面
 
-![image-20201223231557957](https://gitee.com/clay_guo/pic-bed/raw/master/img/image-20201223231557957.png)
-
-## 项目中的一些问题QA
+![QQ截图20201228232617](https://gitee.com/clay_guo/pic-bed/raw/master/img/QQ%E6%88%AA%E5%9B%BE20201228232617.png)项目中的一些问题QA
 
 ### 1.数据库自增主键重新排序
 
