@@ -23,7 +23,7 @@
 
 ### 商城管理
 
-微信小程序商城的后台
+微信小程序商城的后台，可以对小程序端商城的物品进行管理，可以进行修改价格，添加商品等操作
 
 ### 健康码管理
 
@@ -35,12 +35,14 @@
 
 ### 教务信息管理
 
+通过Python从教务系统爬取数据，利用Flask框架制作接口，前端通过ajax向http://localhost:5000发送请求，获得课程表和学生成绩，最终将返回的json数据展示在前台。
+
 + 课表查询
 + 成绩查询
 
 ### 校园资讯管理
 
-
++ 从学校官网首页爬取最新的新闻展示在小程序首页。
 
 ## 项目技术要点
 
@@ -75,7 +77,63 @@
 
 ### 后端注册界面
 
-![QQ截图20201228232617](https://gitee.com/clay_guo/pic-bed/raw/master/img/QQ%E6%88%AA%E5%9B%BE20201228232617.png)项目中的一些问题QA
+![QQ截图20201228232617](https://gitee.com/clay_guo/pic-bed/raw/master/img/QQ%E6%88%AA%E5%9B%BE20201228232617.png)
+
+### 用户管理页面
+
+![img-1](https://gitee.com/clay_guo/pic-bed/raw/master/img/img-1.png)
+
+### 用户信息编辑页面
+
+![img-2](https://gitee.com/clay_guo/pic-bed/raw/master/img/img-2.png)
+
+### 添加用户页面
+
+![img-3](https://gitee.com/clay_guo/pic-bed/raw/master/img/img-3.png)
+
+### 商品管理页面
+
+![img-6](https://gitee.com/clay_guo/pic-bed/raw/master/img/img-6.png)
+
+### 添加商品页面
+
+![img-8](https://gitee.com/clay_guo/pic-bed/raw/master/img/img-8.png)
+
+### 编辑商品页面
+
+![img-7](https://gitee.com/clay_guo/pic-bed/raw/master/img/img-7.png)
+
+### 登录-小程序端
+
+![img-4](https://gitee.com/clay_guo/pic-bed/raw/master/img/img-4.png)
+
+### 注册-小程序端
+
+![img-5](https://gitee.com/clay_guo/pic-bed/raw/master/img/img-5.png)
+
+
+
+
+
+### 校园资讯-小程序端
+
+> 小程序的首页是一个轮播图，显示近期的热点新闻，图片也是可以点击进去查看详情的。
+
+<center class="half">
+    <img src="https://gitee.com/clay_guo/pic-bed/raw/master/img/img-12.png" width="350"/><img src="https://gitee.com/clay_guo/pic-bed/raw/master/img/img-13.png" width="350"/>/>
+</center>
+
+
+
+### 校园商城-小程序端
+
+> 商城小程序可以进行搜索、按类别查询、上滑加载更多（分页查询）等，点击商品即可查看商品的详情，其中商品的标题、价格、已购数量等信息均是存储在数据库后台的
+
+<center class="half">    <img src="https://gitee.com/clay_guo/pic-bed/raw/master/img/img-9.png" width="25%"/><img src="https://gitee.com/clay_guo/pic-bed/raw/master/img/img-14.png" width="25%"/><img src="https://gitee.com/clay_guo/pic-bed/raw/master/img/img-10.png" width="25%"/><img src="https://gitee.com/clay_guo/pic-bed/raw/master/img/img-11.png" width="25%"/> </center>
+
+
+
+## 项目中的一些问题QA
 
 ### 1.数据库自增主键重新排序
 
@@ -97,7 +155,7 @@ ALTER  TABLE  `table_name` MODIFY COLUMN  `id` MEDIUMINT( 8 ) NOT NULL  AUTO_INC
 
 ### 2.c3p0连接池报错，显示`too many connections`
 
-解决方法：重启IDEA项目即可
+解决方法：重启IDEA项目即可，或者见[4](#4.数据库修改最大连接数量)
 
 ### 3.控制台中文乱码
 
@@ -159,9 +217,9 @@ jsondata = json.dumps(jsondata, ensure_ascii=False)
 本项目为开源免费的，但你也可以请作者喝一杯咖啡来加快工作速度。
 
 <center class="half">
-    <img src="https://gitee.com/clay_guo/pic-bed/raw/master/img/IMG_4924(20201222-131847).JPG" alt="IMG_4924(20201222-131847)" style="zoom:25%;" />
-    <img src="https://gitee.com/clay_guo/pic-bed/raw/master/img/IMG_4923(20201222-131836).JPG" alt="IMG_4923(20201222-131836)" style="zoom: 33%;" />
+    <img src="https://gitee.com/clay_guo/pic-bed/raw/master/img/IMG_4924(20201222-131847).JPG" alt="IMG_4924(20201222-131847)" style="zoom:25%;" /><img src="https://gitee.com/clay_guo/pic-bed/raw/master/img/IMG_4923(20201222-131836).JPG" alt="IMG_4923(20201222-131836)" style="zoom: 33%;" />
 <center/>
+
 
 
 ## 参考
