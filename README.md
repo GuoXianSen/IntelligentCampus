@@ -217,9 +217,8 @@ jsondata = json.dumps(jsondata, ensure_ascii=False)
 本项目为开源免费的，但你也可以请作者喝一杯咖啡来加快工作速度。
 
 <center class="half">
-    <img src="https://gitee.com/clay_guo/pic-bed/raw/master/img/IMG_4924(20201222-131847).JPG" alt="IMG_4924(20201222-131847)" style="zoom:25%;" /><img src="https://gitee.com/clay_guo/pic-bed/raw/master/img/IMG_4923(20201222-131836).JPG" alt="IMG_4923(20201222-131836)" style="zoom: 33%;" />
+    <img src="https://gitee.com/clay_guo/pic-bed/raw/master/img/IMG_4924(20201222-131847).JPG" alt="IMG_4924(20201222-131847)" style="zoom:20%;"  width="25%"/><img src="https://gitee.com/clay_guo/pic-bed/raw/master/img/IMG_4923(20201222-131836).JPG" alt="IMG_4923(20201222-131836)" style="zoom: 33%;"  width="20%"/>
 <center/>
-
 
 
 ## 参考
